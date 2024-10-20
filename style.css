@@ -1,0 +1,29 @@
+/* GENERAL */
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+} */
+
+/* .base-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; Mengisi tinggi viewport
+} */
+
+/* LEFT NAVBAR */
+#left-navbar {
+    width: 250px;
+}
+
+/* CONTENT */
+#content {
+    /* flex-grow: 1;  */
+    background-color: #ebeef5; 
+    overflow-y: auto; /* Memungkinkan scrolling di konten */
+}
+
+/* #content .container {
+    text-align: center;
+    justify-content: center;
+} */
