@@ -1,6 +1,4 @@
 <?php
-require "db/repository.php";
-
 $librariansData = getLibrarians();
 
 if (isset($_POST["submit"]) && $_FILES["image"]["error"] === 0) {
