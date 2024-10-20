@@ -4,14 +4,16 @@
         Home View
     </div>
     <?php
-    // Membuat variabel content
+    // Inisialisasi variabel
     $content = '';
     $title = 'All Book';
 
-    for ($i = 0; $i < 10; $i++) {
-        $content .= "Hello World Anjay<br>";
-    }
+    // Dilakukan Buffer pada konten pada include, lalu menyimpannya di variabel $content
+    ob_start();
+    include("view/home_view/content.php");
+    $content = ob_get_clean();
 
+    // Memanggil section_card.php dengan mengirimkan variabel $content dan $title
     include("components/section_card.php");
     ?>
 </div>

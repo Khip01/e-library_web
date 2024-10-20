@@ -1,5 +1,5 @@
 <div id="left-navbar">
-    <ul class="list-group list-group-flush" id="list-tab" role="tablist">
+    <ul class="list-group list-group-flush" id="list-tab" role="tablist" style="width: 250px;">
         <li class="list-group-item bg-light disabled" aria-disabled="true">
             <div class="py-4 px-3 fs-3 fw-bold">
                 E-Library

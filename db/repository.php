@@ -19,6 +19,23 @@ function getLibrarians()
 }
 
 //// ------ BOOK TABLE ------ ////
+// GET - Get all Book data
+function getBooks(){
+    global $conn;
+
+    $query = "SELECT * FROM book";
+    $bookData = mysqli_query($conn, $query);
+    $result = [];
+
+    while ($row = mysqli_fetch_assoc($bookData)) {
+        $result[] = $row;
+    }
+
+    $result = array_reverse($result);
+
+    return $result;
+}
+
 // INSERT - Insert new book
 function createBook($postData, $fileData)
 {
@@ -47,6 +64,7 @@ function createBook($postData, $fileData)
     return mysqli_affected_rows($conn);
 }
 
+// Check Empty Field
 function validateBook($postData, $fileData)
 {
     $title = htmlspecialchars($postData["title"]);

@@ -1,3 +1,8 @@
+<?php 
+
+require "db/repository.php";
+
+?>
 <div id="content" class="flex-grow-1">
     <div class="container py-3 px-4">
         <div class="tab-content" id="nav-tabContent">

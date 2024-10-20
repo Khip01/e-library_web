@@ -12,15 +12,22 @@
 } */
 
 /* LEFT NAVBAR */
-#left-navbar {
-    width: 250px;
-}
+/* #left-navbar {
+    width: 450px;
+} */
 
-/* CONTENT */
+/* CARD PREVIEW */
+/* #section-card {
+    width: 400;
+    height: 1px;
+} */
+
+/* BASE CONTENT */
 #content {
-    /* flex-grow: 1;  */
+    flex-grow: 1; 
+    min-height: 10vh;
     background-color: #ebeef5; 
-    overflow-y: auto; /* Memungkinkan scrolling di konten */
+    overflow-y: auto;
 }
 
 /* #content .container {
