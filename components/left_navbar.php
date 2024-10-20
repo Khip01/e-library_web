@@ -30,10 +30,5 @@
                 Create
             </div>
         </div>
-        <div class="list-group-item list-group-item-action" id="list-update-list" data-bs-toggle="list" href="#list-update" role="tab" aria-controls="list-update">
-            <div class="py-2 px-3">
-                Update
-            </div>
-        </div>
     </ul>
 </div>

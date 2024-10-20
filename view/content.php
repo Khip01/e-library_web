@@ -12,9 +12,6 @@ require "db/repository.php";
             <div class="tab-pane fade" id="list-create" role="tabpanel" aria-labelledby="list-create-list">
                 <?php include("view/create_view/create_view.php"); ?>
             </div>
-            <div class="tab-pane fade" id="list-update" role="tabpanel" aria-labelledby="list-udpate-list">
-                <?php include("view/update_view/update_view.php"); ?>
-            </div>
         </div>
     </div>
 </div>
