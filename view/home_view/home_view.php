@@ -6,7 +6,8 @@
     <?php
     // Inisialisasi variabel
     $content = '';
-    $title = 'All Book';
+    $title = 'Greetings, Librarian! 👋';
+    $leadingTitle = "Your Book Collection Awaits: Ready to Explore, Organize, and Enhance the Library Experience";
 
     // Dilakukan Buffer pada konten pada include, lalu menyimpannya di variabel $content
     ob_start();

@@ -37,7 +37,7 @@ if (isset($_POST["submit"]) && $_FILES["image"]["error"] === 0) {
 </script>
 
 <form method="POST" action="" class="needs-validation" enctype="multipart/form-data" novalidate>
-    <div class="mb-3">
+    <div class="mb-3 mt-2">
         <label for="bookTitle1" class="form-label">Book Title</label>
         <input type="text" name="title" class="form-control" id="bookTitle1" required>
         <div class="valid-feedback">

@@ -6,7 +6,8 @@
     <?php
     // Inisialisasi variabel
     $content = '';
-    $title = 'Book Identity Data ';
+    $title = 'Book Identity Data';
+    $leadingTitle = 'Provide Essential Book Details and Identification';
 
     // Dilakukan Buffer pada konten pada include, lalu menyimpannya di variabel $content
     ob_start();
