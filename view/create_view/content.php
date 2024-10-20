@@ -64,6 +64,12 @@ if (isset($_POST["submit"]) && $_FILES["image"]["error"] === 0) {
     <div class="form-floating mb-4">
         <textarea class="form-control" name="description" placeholder="Put the book description here" id="floatingDescription" style="height: 100px" required></textarea>
         <label for="floatingDescription">Description</label>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please fill this field.
+        </div>
     </div>
     <div class="form-floating mb-4">
         <select class="form-select" required name="librarian" id="floatingSelect" aria-label="Librarians floating label">

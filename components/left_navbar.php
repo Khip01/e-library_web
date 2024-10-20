@@ -5,21 +5,6 @@
                 E-Library
             </div>
         </li>
-        <!-- <li class="list-group-item list-group-item-action active bg-light" id="list-home-list">
-            <a class="py-2 px-3">
-                Home
-            </a>
-        </li>
-        <li class="list-group-item list-group-item-action bg-light" id="list-create-list">
-            <a class="py-2 px-3">
-                Create
-            </a>
-        </li>
-        <li class="list-group-item list-group-item-action bg-light" id="list-update-list">
-            <a class="py-2 px-3">
-                Update
-            </a>
-        </li> -->
         <div class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">
             <div class="py-2 px-3">
                 Home
