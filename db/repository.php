@@ -8,10 +8,10 @@ function getLibrarians()
     global $conn;
 
     $query = "SELECT * FROM librarian";
-    $librarianData = mysqli_query($conn, $query);
+    $librarianData = sqlsrv_query($conn, $query);
     $result = [];
 
-    while ($row = mysqli_fetch_assoc($librarianData)) {
+    while ($row = sqlsrv_fetch_array($librarianData)) {
         $result[] = $row;
     }
 
@@ -24,14 +24,29 @@ function getBooks(){
     global $conn;
 
     $query = "SELECT * FROM book";
-    $bookData = mysqli_query($conn, $query);
+    $bookData = sqlsrv_query($conn, $query);
     $result = [];
 
-    while ($row = mysqli_fetch_assoc($bookData)) {
+    while ($row = sqlsrv_fetch_array($bookData)) {
         $result[] = $row;
     }
 
     $result = array_reverse($result);
+
+    return $result;
+}
+
+function getBookById($bookId){
+    global $conn;
+
+    $query = "SELECT * FROM book WHERE book_id = ?";
+    $param = array($bookId);
+    $bookData = sqlsrv_query($conn, $query, $param);
+    $result = [];
+
+    while ($row = sqlsrv_fetch_array($bookData)) {
+        $result[] = $row;
+    }
 
     return $result;
 }
@@ -58,10 +73,10 @@ function createBook($postData, $fileData)
 
     // Insert data
     $query = "INSERT INTO book (title, author, isbn, image, description, librarian_id) VALUES ('$title', '$author', '$isbn', '$image', '$description', '$librarian' )";
-    
-    mysqli_query($conn, $query);
 
-    return mysqli_affected_rows($conn);
+    sqlsrv_query($conn, $query);
+
+    return sqlsrv_rows_affected($conn);
 }
 
 // Check Empty Field
