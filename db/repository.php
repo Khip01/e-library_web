@@ -18,6 +18,23 @@ function getLibrarians()
     return $result;
 }
 
+// GET - Specific Librarian data
+function getLibrarianById($librarianId)
+{
+    global $conn;
+
+    $query = "SELECT name FROM librarian WHERE librarian_id = ?";
+    $param = array($librarianId);
+    $librarianData = sqlsrv_query($conn, $query, $param);
+    $result = "";
+
+    while ($row = sqlsrv_fetch_array($librarianData)) {
+        $result = $row[0];
+    }
+
+    return $result;
+}
+
 //// ------ BOOK TABLE ------ ////
 // GET - Get all Book data
 function getBooks(){
