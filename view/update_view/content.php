@@ -1,3 +1,8 @@
+<?php 
+$booksData = getBooks();
+
+?>
+
 <div class="py-3">
     <?php 
     for ($i = 0; $i < count($booksData); $i++) {

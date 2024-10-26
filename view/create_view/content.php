@@ -2,13 +2,11 @@
 $librariansData = getLibrarians();
 
 if (isset($_POST["submit"]) && $_FILES["image"]["error"] === 0) {
-    if (validateBook($_POST, $_FILES)) {
-        createBook($_POST, $_FILES);
-    }
+    createBook($_POST, $_FILES);
 
     // Redirect setelah form di-submit dan diproses
-    header("Location: " . $_SERVER['PHP_SELF']); // Redirect ke halaman yang sama
-    exit; 
+    // header("Location: " . $_SERVER['PHP_SELF']); // Redirect ke halaman yang sama
+    // exit; 
 }
 ?>
 

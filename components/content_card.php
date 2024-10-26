@@ -1,4 +1,4 @@
-<div class="mx-2 mb-4 mt-3 p-0 col rounded-3 shadow book-card" role="button" data-book-id="<?= $bookData['book_id'] ?>" style="height: 340px; width: 220px; overflow: hidden;">
+<div id="card-hover" class="mx-2 mb-4 mt-3 p-0 col rounded-3 shadow book-card" role="button" data-book-id="<?= $bookData['book_id'] ?>" style="height: 340px; width: 220px; overflow: hidden;">
     <div class="d-flex flex-column" style="height: 100%;">
         <div class="bg-body-tertiary border-bottom" style="overflow: hidden; height: 270px;">
             <img src="assets/images/<?= $bookData["image"] ?>" class="img-fluid bg-body-tertiary" style="width: 100%; height: 100%; object-fit: cover;" alt="Book Image">
@@ -13,3 +13,14 @@
         </div>
     </div>
 </div>
+
+<style>
+    #card-hover {
+        transition: background-color 0.3s ease, filter 0.3s ease;
+    }
+
+    #card-hover:hover {
+        background-color: #f0f0f0;
+        filter: brightness(90%);
+    }
+</style>

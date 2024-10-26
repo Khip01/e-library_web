@@ -93,22 +93,53 @@ function createBook($postData, $fileData)
 
     sqlsrv_query($conn, $query);
 
-    return sqlsrv_rows_affected($conn);
+    return;
 }
 
-// Check Empty Field
-function validateBook($postData, $fileData)
+// UPDATE - Update book data
+function updateBook($postData, $fileData)
 {
+    global $conn;
+
+    if(!isset($postData["submit"])) {
+        return;
+    }
+
+    // inisialisasi
+    $bookId = htmlspecialchars($postData["book_id"]);
     $title = htmlspecialchars($postData["title"]);
     $author = htmlspecialchars($postData["author"]);
     $isbn = htmlspecialchars($postData["isbn"]);
-    $image = htmlspecialchars(basename($fileData["image"]["name"]));
     $description = htmlspecialchars($postData["description"]);
     $librarian = htmlspecialchars($postData["librarian"]);
 
-    if (empty($title) || empty($author) || empty($isbn) || empty($image) || empty($description) || empty($librarian)) {
-        return false;
+    // Update data
+    $query = "UPDATE book 
+        SET title = '$title', 
+        author = '$author', 
+        isbn = '$isbn', 
+        description = '$description', 
+        librarian_id = '$librarian' 
+        WHERE 
+        book_id = '$bookId'";
+
+    sqlsrv_query($conn, $query);
+
+    // Mengecek apakah ada file gambar yang diunggah
+    if (isset($fileData["image"]) && $fileData["image"]["error"] === 0) {
+        // inisialisasi image
+        $imageName = htmlspecialchars(basename($fileData["image"]["name"]));
+        $imagePath = "assets/images/" . $imageName;
+
+        // Pindahkan file ke folder assets/images
+        if (move_uploaded_file($fileData["image"]["tmp_name"], $imagePath)) {
+            // Update data gambar di database
+            $queryImage = "UPDATE book 
+                           SET image = '$imageName' 
+                           WHERE book_id = '$bookId'";
+            sqlsrv_query($conn, $queryImage);
+        }
     }
 
-    return true;
+    return;
 }

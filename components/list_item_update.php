@@ -1,8 +1,8 @@
-<div id="list-item-update" role="button" class="d-flex flex-row align-items-center justify-content-between rounded-4" style="height: 100px; width: 100%; padding-top: 10px; padding-bottom: 10px;">
+<div id="list-item-update" role="button" class="d-flex flex-row align-items-center justify-content-between rounded-4 list-item-update" data-book-id="<?= $bookData['book_id'] ?>" style="height: 100px; width: 100%; padding-top: 10px; padding-bottom: 10px;">
     <div class="text-center mx-3">
         <?= $i + 1 ?>
     </div>
-    <div class="border rounded-2 me-3" style="height: 100%; min-width: 60px; background-color: #001743;">
+    <div class="border rounded-2 me-3" style="height: 100%; min-width: 60px; background-color: #001743; overflow: hidden;">
         <img src="assets/images/<?= $bookData["image"] ?>" class="img-fluid bg-body-tertiary" style="width: 100%; height: 100%; object-fit: cover;" alt="Book Image">
     </div>
     <div class="d-flex flex-column me-3 flex-grow-1" style="min-width: 65%; width: 100%;">
